@@ -388,7 +388,7 @@ done
 
 find . -maxdepth 1 -print0 | xargs -0 -n1 |
 while IFS= read -r line; do 
-	printf 'line:%s\n' "$line";
+    printf 'line:%s\n' "$line";
 done
 ```
 
@@ -396,7 +396,7 @@ done
 #!/bin/bash
 
 while IFS= read -r line; do 
-	printf 'line:%s\n' "$line";
+    printf 'line:%s\n' "$line";
 done < <(find . -maxdepth 1 -print0 | xargs -0 -n1)
 ```
 
@@ -452,7 +452,7 @@ done < "$file" # data from $file is redirected to stdin
 #!/bin/bash
 
 while IFS=: read -r username password userid groupid comment homedir cmdshell; do
-	echo "$username, $userid, $comment $homedir"
+    echo "$username, $userid, $comment $homedir"
 done < /etc/passwd
 ```
 
@@ -495,7 +495,7 @@ Bourne shell allows only nine parameters to be referenced directly (n=1–9); Ba
 
 ```
 function myfunc {
-	echo "$1 $2"
+    echo "$1 $2"
 }
 
 myfunc hello world
@@ -509,8 +509,8 @@ myfunc hello world
 
 ```
 function myfunc {
-	# x is only visible to this fucntion
-	local x="test"
+    # x is only visible to this fucntion
+    local x="test"
 }
 ```
 **Pass arguments by reference**
@@ -519,7 +519,7 @@ function myfunc {
 #!/bin/bash
 
 function myfunc {
-	# -n needs bash 4.3+
+    # -n needs bash 4.3+
    local -n ref=$1
    
    ref="changed"
@@ -588,7 +588,7 @@ func2
 #!/bin/bash
 
 function myfunc {
-	echo "result"
+    echo "result"
 }
 
 x=$(myfunc)
@@ -601,7 +601,7 @@ x=$(myfunc)
 #!/bin/bash
 
 function myfunc {
-	exit 2
+    exit 2
 }
 
 myfunc
@@ -633,7 +633,7 @@ Only function name:
 
 ```
 $ function cd {
-	ls -la $1
+    ls -la $1
 }
 
 $ command -V cd
