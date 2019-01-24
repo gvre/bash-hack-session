@@ -445,7 +445,7 @@ done < in.txt
 file=${1:-/dev/stdin}
 while IFS= read -r line; do
     printf '%s\n' "$line"
-done < "$file" # data from $file is redirected to stdin (fd0)
+done < "$file" # data from $file is redirected to stdin
 ```
 
 ```
