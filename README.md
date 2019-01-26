@@ -509,7 +509,7 @@ myfunc hello world
 
 ```
 function myfunc {
-    # x is only visible to this fucntion
+    # x is only visible to this function
     local x="test"
 }
 ```
